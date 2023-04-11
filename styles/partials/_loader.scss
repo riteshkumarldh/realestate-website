@@ -1,0 +1,23 @@
+.loader {
+    height: 100vh;
+    display: none;
+
+    &.active {
+        @include flex-center();
+        justify-content: center;
+    }
+
+
+    span {
+        width: 100px;
+        height: 100px;
+        border: 7px solid var(--light-red);
+        border-top-color: var(--main-color);
+        border-radius: 50%;
+        animation: spin 0.75s linear infinite;
+    }
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}

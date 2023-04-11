@@ -1,0 +1,177 @@
+// google fonts
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+
+// custom css properties
+:root {
+
+    // COLORS
+    --light-red: hsl(7, 56%, 91%);
+    --main-color: hsl(9, 100%, 62%);
+    --p-text-color: hsl(200, 15%, 43%);
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+    --dark-top: hsl(200, 69%, 14%);
+    --yellow-green: hsl(89, 72%, 45%);
+    --heading-color: #071a1d;
+    --hero-bg: hsl(192, 24%, 96%);
+
+    // Typography
+    --ff-nunito-sans: "Nunito Sans", sans-serif;
+    --ff-poppins: "Poppins", sans-serif;
+
+    --section-padding: 100px;
+    --shadow-1: 0 5px 20px 0 hsla(219, 56%, 21%, 0.1);
+    --shadow-2: 0 16px 32px hsla(188, 63%, 7%, 0.1);
+}
+
+// mixin for typography
+@mixin typography($fs: 1.6ren, $fw: 400, $line-height: 1.5){
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $line-height;
+}
+// mixin for flex-between
+@mixin flex-between(){
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+// mixin for flex-center
+@mixin flex-center(){
+    display: flex;
+    align-items: center;
+}
+
+// Resets basic styling
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--ff-nunito-sans);
+    font-size: 1.6rem;
+
+    padding-bottom: 10rem;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+
+    &-thumb {
+        background-color: var(--dark-top);
+    }
+
+    &-track {
+        background-color: transparent;
+    }
+}
+
+h1,
+h2,
+h3,
+h4 { font-family: var(--ff-poppins); }
+
+a,
+span,
+img,
+button { display: block; }
+
+img { height: auto; }
+
+address {
+    font-style: normal;
+}
+
+button, input {
+    background: none;
+    border: none;
+    font: inherit;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+input {
+    width: 100%;
+    outline: none;
+}
+
+li { list-style-type: none; }
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+// Reused styles
+.container {
+    padding-inline: 1.5rem;
+}
+
+.primary-btn {
+    font-family: var(--ff-poppins);
+    padding: 10px 20px;
+    @include typography(1.4rem, 400, 1.5);
+    background-color: var(--main-color);
+    color: var(--white);
+    border: 1px solid var(--main-color);
+    text-transform: capitalize;
+    width: max-content;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 0;
+        transition: 0.3s;
+        z-index: -1;
+        background-color: var(--white);
+    }
+
+    &:hover {
+        border: 1px solid black;
+        color: black;
+    }
+
+    &:hover::before {
+        width: 100%;
+    }
+}
+
+.section-subtitle {
+    background-color: var(--light-red);
+    color: var(--main-color);
+    width: max-content;
+    padding: 0.5rem 2rem;
+    border-radius: 2rem;
+    @include typography(1.4rem, 600, 1.5);
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    color: var(--heading-color);
+    @include typography(2.5rem, 600, 1.3);
+    margin-bottom: 2rem;
+}
+
+.section-text {
+    @include typography(1.5rem, 400, 1.5);
+    color: var(--p-text-color);
+}

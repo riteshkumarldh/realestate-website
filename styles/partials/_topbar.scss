@@ -1,0 +1,81 @@
+.top-bar {
+    padding-block: 1.5rem;
+    background-color: var(--dark-top);
+
+    .container {
+        @include flex-between();
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 1.2rem;
+
+
+        address {
+            @include flex-center();
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+
+            a {
+                @include flex-center();
+                gap: 0.5rem;
+
+                &:hover {
+                    span {
+                        color: var(--main-color);
+                    }
+                }
+
+                i {
+                    font-size: 1.8rem;
+                    color: var(--main-color);
+                }
+
+                span {
+                    @include typography(1.3rem, 600, 1.5);
+                    color: var(--white);
+                    transition: 0.3s;
+                }
+            }
+        }
+
+        .topbar-right {
+            @include flex-center();
+            gap: 1.5rem;
+
+            
+            .social-icons {
+                @include flex-center();
+                gap: 1rem;
+
+                li {
+
+                    &:hover {
+                        i {
+                            color: var(--main-color);
+                        }
+                    }
+
+
+                    i {
+                        font-size: 1.8rem;
+                        color: var(--white);
+                        transition: 0.3s;
+                    }
+                }
+            }
+
+            button {
+                background-color: var(--main-color);
+                color: var(--white);
+                padding: 0.5rem 1rem;
+                @include typography(1.4rem, 600, 1);
+                transition: 0.25s;
+
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+        }
+
+    }
+}

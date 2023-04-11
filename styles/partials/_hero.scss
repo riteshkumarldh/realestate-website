@@ -1,0 +1,52 @@
+.hero {
+    background-color: var(--hero-bg);
+    padding-block: var(--section-padding);
+
+    .container {
+        display: grid;
+        gap: 5rem;
+
+        .hero-content {
+
+            & > div {
+                @include flex-center();
+                gap: 1rem;
+                margin-bottom: 2rem;
+
+                i {
+                    font-size: 2rem;
+                    color: var(--main-color);
+                }
+
+                p {
+                    @include typography(1.5rem, 700, 1.5);
+                }
+            }
+
+            .heading {
+                @include typography(3rem, 700, 1.2);
+                margin-bottom: 2rem;
+            }
+            
+            & > p {
+                @include typography(1.4rem, 400, 2);
+                color: var(--p-text-color);
+                padding-left: 1.5rem;
+                border-left: 1px solid black;
+                margin-bottom: 2rem;
+            }
+
+            
+        }
+
+        figure {
+            position: relative;
+
+            img {
+                width: 100%;
+                aspect-ratio: --width / --height;
+            }
+        }
+
+    }
+}

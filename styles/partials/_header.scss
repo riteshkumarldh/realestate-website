@@ -1,0 +1,125 @@
+
+.header {
+
+    .container{
+
+        .logo {
+            @include flex-center();
+            justify-content: center;
+            padding-block: 2.5rem;
+        }
+
+        .navbar {
+            position: fixed;
+            left: -320px;
+            top: 0;
+            max-width: 320px;
+            width: 100%;
+            height: 100vh;
+            background-color: var(--white);
+            z-index: 6;
+            transition: 0.3s;
+
+            &.active {
+                left: 0;
+            }
+            
+            .nav-top {
+                @include flex-between();
+                padding-inline: 2rem;
+                padding-block: 7rem 5rem;
+
+                .nav-close {
+                    display: grid;
+                    place-items: center;
+
+                    &:hover {
+                        i {
+                            color: var(--main-color);
+                        }
+                    }
+
+                    i {
+                        font-size: 2.5rem;
+                        transition: 0.3s;
+                    }
+                }
+            }
+
+            .nav-list {
+                display: flex;
+                flex-direction: column;
+                gap: 3rem;
+                padding-inline-start: 3rem;
+
+                .nav-link {
+                    text-transform: uppercase;
+                    @include typography(1.6rem, 600, 1.5);
+                    transition: 0.3s;
+
+                    &:hover {
+                        color: var(--main-color);
+                    }
+                }
+            }
+        }
+
+
+        .nav-buttons {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            @include flex-center();
+            justify-content: space-around;
+            padding: 1.5rem 2rem;
+            box-shadow: -2px 0 10px rgba($color: grey, $alpha: 0.5);
+            z-index: 4;
+            background-color: var(--white);
+
+            button {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+
+                &:hover {
+                    i {
+                        color: var(--main-color);
+                        transform: scale(1.1);
+                    }
+
+                    span {
+                        color: grey;
+                    }
+                }
+
+                i {
+                    font-size: 2rem;
+                    transition: 0.3s;
+                }
+                
+                span {
+                    font-size: 1.3rem;
+                    font-weight: 600;
+                    transition: 0.3s;
+                }
+            }
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba($color: #000000, $alpha: 0.5);
+            z-index: 5;
+            display: none;
+
+            &.active {
+                display: block;
+            }
+        }
+    }
+}

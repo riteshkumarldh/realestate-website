@@ -1,0 +1,65 @@
+.about {
+    padding-block: var(--section-padding);
+
+    .container {
+        display: grid;
+        gap: 4rem;
+
+
+        figure {
+            position: relative;
+
+            .about-img {
+                aspect-ratio: --width / --height;
+                width: 100%;
+            }
+
+            .about-absolute {
+                position: absolute;
+                top: 50%;
+                left: 5%;
+                object-fit: cover;
+            }
+        }
+
+        .about-content {
+
+
+            .section-text {
+                margin-bottom: 2.5rem;
+            }
+
+            .about-feature {
+                display: flex;
+                flex-direction: column;
+                gap: 1.8rem;
+
+                & > div {
+                    @include flex-center();
+                    gap: 2rem;
+
+                    i {
+                        font-size: 1.5rem;
+                        padding: 1.5rem;
+                        background-color: var(--light-red);
+                        border-radius: 50%;
+                        color: var(--main-color);
+                    }
+
+                    span {
+                        @include typography(1.4rem, 400, 1.5);
+                        color: var(--p-text-color);
+                    }
+                }
+            }
+
+            .about-quote {
+                margin-block: 2.5rem;
+                padding: 2rem 2.5rem;
+                border-left: 4px solid var(--main-color);
+                background-color: var(--light-red);
+                color: var(--p-text-color);
+            }
+        }
+    }
+}
