@@ -1,0 +1,94 @@
+.services {
+    background-color: var(--hero-bg);
+    padding-block: var(--section-padding);
+
+    .container {
+
+        .service-top {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+        }
+
+        .services-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 5rem;
+            align-items: center;
+
+            .service-card {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                align-items: center;
+                text-align: center;
+                box-shadow: var(--shadow-1);
+                padding: 3rem 2.5rem;
+                position: relative;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 0;
+                    height: 5px;
+                    background-color: var(--main-color);
+                    transition: 0.3s;
+                    border-radius: 0 0 0.5rem 0.5rem;
+                }
+
+                &:hover::after {
+                    width: 100%;
+                }
+
+                &:hover {
+
+                    a {
+                        span {
+                            color: var(--main-color);
+                        }
+                        
+                        i {
+                            color: var(--main-color);
+                            transform: translateX(5px);
+                        }
+                    }
+                }
+
+
+
+                h3 {
+                    cursor: pointer;
+                    transition: 0.2s;
+
+                    &:hover {
+                        color: var(--main-color);
+                    }
+
+                }
+
+                a {
+                    display: flex;
+                    gap: 1rem;
+                    align-items: center;
+
+                    
+
+                    span {
+                        font-size: 1.4rem;
+                        color: hsla(0, 0%, 10%, 0.8);
+                        font-weight: 600;
+                        transition: 0.3s;
+                    }
+
+                    i {
+                        font-size: 2rem;
+                        transition: 0.3s;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -60,6 +60,11 @@
                 background-color: var(--light-red);
                 color: var(--p-text-color);
             }
+
+            button {
+                text-transform: uppercase;
+                font-size: 1.6rem;
+            }
         }
     }
 }
