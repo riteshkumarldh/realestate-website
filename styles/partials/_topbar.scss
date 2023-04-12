@@ -8,6 +8,10 @@
         flex-wrap: wrap;
         gap: 1.2rem;
 
+        @include medium(){
+            flex-direction: row;
+        }
+
 
         address {
             @include flex-center();
@@ -15,9 +19,17 @@
             gap: 1rem;
             flex-wrap: wrap;
 
+            @include large(){
+                gap: 2.5rem;
+            }
+
             a {
                 @include flex-center();
                 gap: 0.5rem;
+
+                @include large(){
+                    gap: 1rem;
+                }
 
                 &:hover {
                     span {
@@ -28,12 +40,20 @@
                 i {
                     font-size: 1.8rem;
                     color: var(--main-color);
+
+                    @include large(){
+                        font-size: 2rem;
+                    }
                 }
 
                 span {
                     @include typography(1.3rem, 600, 1.5);
                     color: var(--white);
                     transition: 0.3s;
+                    
+                    @include large(){
+                        @include typography(1.4rem, 600, 1.5);
+                    }
                 }
             }
         }
@@ -41,6 +61,10 @@
         .topbar-right {
             @include flex-center();
             gap: 1.5rem;
+
+            @include large(){
+                gap: 2.5rem;
+            }
 
             
             .social-icons {
@@ -70,6 +94,10 @@
                 padding: 0.5rem 1rem;
                 @include typography(1.4rem, 600, 1);
                 transition: 0.25s;
+
+                @include medium(){
+                    padding: 1rem 2rem;
+                }
 
                 &:hover {
                     opacity: 0.8;

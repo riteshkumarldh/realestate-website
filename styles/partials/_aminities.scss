@@ -18,6 +18,10 @@
             justify-content: center;
             gap: 2rem;
 
+            @include large(){
+                gap: 4rem;
+            }
+
             .aminity-card {
                 @include flex-between();
                 justify-content: center;
@@ -29,6 +33,16 @@
                 box-shadow: var(--shadow-1);
                 position: relative;
                 transition: 0.3s;
+
+                @include small(){
+                    width: calc(100% / 2 - 3rem);
+                }
+                @include large(){
+                    width: calc(100% / 3 - 4rem);
+                }
+                @include xl(){
+                    width: calc(100% / 4 - 4rem);
+                }
 
                 &:hover {
                     .icon {

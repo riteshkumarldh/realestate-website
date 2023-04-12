@@ -12,10 +12,21 @@
         }
 
         .services-cards {
-            display: flex;
-            flex-direction: column;
+            display: grid;
             gap: 5rem;
-            align-items: center;
+
+            @include medium(){
+                grid-template-columns: repeat(2, 1fr);
+                gap: 3rem;
+            }
+            @include large(){
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+            }
+            @include xl(){
+                grid-template-columns: repeat(3, 1fr);
+                gap: 4rem;
+            }
 
             .service-card {
                 display: flex;

@@ -1,7 +1,13 @@
 .blog {
-    padding-block: var(--section-padding);
+    padding-block-start: var(--section-padding);
 
     .container {
+
+        .blog-top {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
 
         .blogs-cards {
@@ -17,13 +23,31 @@
                 box-shadow: var(--shadow-2);
                 min-width: 100%;
 
+                @include medium(){
+                    min-width: calc(100% / 2 - 40px);
+                }
+                @include xl(){
+                    min-width: calc(100% / 3 - 50px);
+                }
+
+                &:hover {
+
+                    figure {
+                        img {
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+
 
 
                 figure {
                     aspect-ratio: --width / --height;
+                    overflow: hidden;
 
                     img {
                         width: 100%;
+                        transition: 0.3s;
                     }
                 }
 
@@ -58,10 +82,20 @@
                     }
 
                     h3 {
+                        cursor: pointer;
                         @include typography(1.6rem, 600, 1.5);
                         word-spacing: 1.5px;
                         padding-bottom: 2rem;
                         border-bottom: 1px solid rgba($color: #000, $alpha: 0.2);
+                        
+                        @include large(){
+                            @include typography(1.8rem, 600, 1.5);
+                        }
+
+                        &:hover {
+                            color: var(--main-color);
+                            transition: 0.3s;
+                        }
                     }
 
                     .other {
@@ -76,11 +110,19 @@
                             i {
                                 font-size: 1.5rem;
                                 color: var(--main-color);
+                                
+                                @include medium(){
+                                    font-size: 1.8rem;
+                                }
                             }
 
                             span {
                                 font-size: 1.3rem;
                                 color: grey;
+                                
+                                @include medium(){
+                                    font-size: 1.5rem;
+                                }
                             }
                         }
 
@@ -89,6 +131,10 @@
                             text-transform: uppercase;
                             font-size: 1.3rem;
                             font-weight: 500;
+                            
+                            @include medium(){
+                                font-weight: 600;
+                            }
                         }
                     }
                 }

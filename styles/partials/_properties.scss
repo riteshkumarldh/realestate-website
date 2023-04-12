@@ -14,16 +14,42 @@
             display: flex;
             flex-wrap: nowrap;
             gap: 50px;
-
             overflow-x: scroll;
 
             &::-webkit-scrollbar {
                 display: none;
             }
 
+            &:hover {
+                &::-webkit-scrollbar {
+                    display: block;
+                    height: 6px;
+                    
+                    &-thumb {
+                        background-color: rgba(0, 0, 0, 0.1);
+                        border-radius: 1rem;
+    
+                    }
+    
+                    &-track {
+                        background-color: aliceblue;
+                    }
+                }
+            }
+
             .property-card {
                 box-shadow: var(--shadow-1);
                 min-width: 100%;
+
+                @include medium(){
+                    min-width: calc(100% / 2);
+                }
+                @include large(){
+                    min-width: calc(100% / 2.5);
+                }
+                @include xl(){
+                    min-width: calc(100% / 3);
+                }
 
 
                 &:hover {
@@ -136,7 +162,7 @@
                         padding-inline: 2rem;
                         
                         h3 {
-                            @include typography(1.8rem, 600, 1.5);
+                            @include typography(1.8rem, 600, 1.5); 
                         }
                         
                         span {
@@ -150,6 +176,11 @@
                         
                         h3 {
                             @include typography(1.8rem, 600, 1.5);
+                            transition: 0.3s;
+
+                            &:hover {
+                                color: var(--main-color)
+                            }
                         }
                         
                     }
